@@ -397,7 +397,7 @@ windows:vs2019:deploy:
   extends: .windows
   script:
     - rm -r build
-    - ./contrib/packaging-python/conda/gitlab/build_pychrono.bat
+    - Start-Process "cmd.exe" "/c ./contrib/packaging-python/conda/gitlab/build_pychrono.bat"
   environment:
     name: pychrono-win64
     url: https://anaconda.org/projectchrono/pychrono
