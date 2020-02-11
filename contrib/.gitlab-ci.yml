@@ -400,10 +400,10 @@ windows:vs2019:deploy:
     - dir
     - pwd
     - $env:Path += ";C:\Users\buildbot\Miniconda3\Scripts"
-    #- & cmd /k "activate base & powershell"
-    #- conda install --yes conda-build anaconda-client
-    #- conda install --yes -c intel mkl-devel=2018.0.3
-    #- conda build .\contrib\packaging-python\conda --python=3.6 --no-remove-work-dir --dirty
+    - cmd /k "activate base & powershell"
+    - conda install --yes conda-build anaconda-client
+    - conda install --yes -c intel mkl-devel=2018.0.3
+    - conda build .\contrib\packaging-python\conda --python=3.6 --no-remove-work-dir --dirty
     #- anaconda --token "$env:ANACONDA_TOKEN" upload C:\Users\buildbot\Miniconda3\conda-bld\pychrono-4.0.0*.bz2
   environment:
     name: pychrono-win64
