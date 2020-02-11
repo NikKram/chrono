@@ -374,7 +374,7 @@ windows:vs2019:build:
     -DUSE_PARALLEL_CUDA=OFF
   #-DENABLE_MODULE_FSI=TRUE
   #- Invoke-Expression "& `'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.com`' Chrono.sln -Build `"Release|x64`" -log buildlog.txt"
-  - '& "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" Chrono.sln -maxcpucount:8 -property:Configuration=Release'
+  #- '& "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" Chrono.sln -maxcpucount:8 -property:Configuration=Release'
   artifacts:
     expire_in: 60m
     paths:
@@ -387,7 +387,7 @@ windows:vs2019:test:
   extends: .windows
   script:
   - cd build
-  - ctest
+  #- ctest
   dependencies: ["windows:vs2019:build"]
 
 
