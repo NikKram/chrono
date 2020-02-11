@@ -399,13 +399,10 @@ windows:vs2019:deploy:
     - rm -r build
     - dir
     - pwd
-    - $env:Path += ";$env:CONDA_INSTALL_LOCN\Scripts"
-    - "$env:CONDA_INSTALL_LOCN\Scripts\conda.exe" init powershell
-    - conda activate
-    - conda install --yes conda-build anaconda-client
-    - conda install --yes -c intel mkl-devel=2018.0.3
-    - conda build .\contrib\packaging-python\conda --python=3.6 --no-remove-work-dir --dirty
-    #- anaconda --token "$env:ANACONDA_TOKEN" upload "$env:CONDA_INSTALL_LOCN\conda-bld\pychrono-4.0.0*.bz2"
+    - Start-Process "cmd.exe" "/c .\contrib\packaging-python\gitlab\build_pychrono.bat >outputfile.txt" -Wait
+    - Start-Sleep -s 600
+    - get-content outputfile.txt
+
   environment:
     name: pychrono-win64
     url: https://anaconda.org/projectchrono/pychrono
