@@ -397,7 +397,9 @@ windows:vs2019:deploy:
   extends: .windows
   script:
     - rm -r build
-    - Start-Process "cmd.exe" "/c C:\codes\Chrono\Chrono_Source\contrib\packaging-python\gitlab\build_pychrono.bat >outputfile.txt" -Wait
+    - dir
+    - pwd
+    - Start-Process "cmd.exe" "/c .\contrib\packaging-python\gitlab\build_pychrono.bat >outputfile.txt" -Wait
     - Start-Sleep -s 600
     - get-content outputfile.txt
   environment:
