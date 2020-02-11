@@ -1,3 +1,5 @@
+@echo on
+echo Process begins
 call C:\Users\buildbot\Miniconda3\Scripts\activate.bat
 call conda install --yes conda-build anaconda-client
 call conda install --yes -c intel mkl-devel=2018.0.3
