@@ -404,7 +404,10 @@ windows:vs2019:deploy:
     name: pychrono-win64
     url: https://anaconda.org/projectchrono/pychrono
   when: manual
-
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - ./outputfile.txt
 
 windows:vs2017:build:
   stage: build
