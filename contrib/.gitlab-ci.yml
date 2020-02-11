@@ -400,7 +400,8 @@ windows:vs2019:deploy:
     - dir
     - pwd
     - $env:Path += ";C:\Users\buildbot\Miniconda3\Scripts"
-    - cmd /k "activate base & powershell"
+    - C:\Users\buildbot\Miniconda3\Scripts\conda.exe init powershell
+    - conda activate
     - conda install --yes conda-build anaconda-client
     - conda install --yes -c intel mkl-devel=2018.0.3
     - conda build .\contrib\packaging-python\conda --python=3.6 --no-remove-work-dir --dirty
