@@ -399,6 +399,7 @@ windows:vs2019:deploy:
     - rm -r build
     - dir
     - pwd
+    - echo $env:CONDA_INSTALL_LOCN
     - Start-Process "cmd.exe" "/c .\contrib\packaging-python\gitlab\build_pychrono.bat >outputfile.txt" -Wait
     - Start-Sleep -s 600
     - get-content outputfile.txt
